@@ -33,6 +33,7 @@ socket.on("start", (data) => {
 // Disconnect
 socket.on("disconnect", () => {
   console.log("Disconnected from server");
+  socket.disconnect();
 });
 
 socket.on("user", (data) => {
@@ -93,10 +94,10 @@ socket.on("user", (data) => {
   }
 
   // Start move
-  setInterval(changeDirection, 1000);
+  // setInterval(changeDirection, 1000);
 
   // Shoot
-  setInterval(() => {
-      socket.emit('shoot', {});
-  }, 1020);
+  // setInterval(() => {
+  //   socket.emit("shoot", {});
+  // }, 1020);
 });
